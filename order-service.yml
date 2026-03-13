@@ -1,18 +1,26 @@
 spring:
   application:
     name: order-service
+
   datasource:
     url: jdbc:mysql://localhost:3306/orderdb?createDatabaseIfNotExist=true
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 server:
-  port: 8084
+  port: 8083
 
 eureka:
   client:
@@ -30,6 +38,7 @@ resilience4j:
         minimum-number-of-calls: 5
         wait-duration-in-open-state: 10s
         sliding-window-size: 10
+
 management:
   tracing:
     sampling:
@@ -39,9 +48,3 @@ management:
     web:
       exposure:
         include: "*"
-spring:
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
