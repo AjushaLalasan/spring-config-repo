@@ -18,8 +18,6 @@ spring:
     port: 5672
     username: guest
     password: guest
-    publisher-confirm-type: correlated
-    publisher-returns: true
 
 server:
   port: 8084
