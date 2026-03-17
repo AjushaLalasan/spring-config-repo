@@ -20,6 +20,13 @@ spring:
     password: guest
     publisher-confirm-type: correlated
     publisher-returns: true
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 1000
+          max-attempts: 3
+          multiplier: 2
 
 server:
   port: 8084
