@@ -1,13 +1,6 @@
 spring:
   application:
     name: notification-service
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    prefer-ip-address: true
-    hostname: 127.0.0.1
 
   rabbitmq:
     host: localhost
@@ -23,6 +16,15 @@ eureka:
           initial-interval: 1000
           max-attempts: 3
           multiplier: 2
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+  instance:
+    prefer-ip-address: true
+    hostname: 127.0.0.1
 
 server:
   port: 8083
